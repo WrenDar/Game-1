@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 import random\
+\
+def guess_number_game():\
+    print("Welcome to the Number Guessing Game!")\
+    print("I'm thinking of a number between 1 and 100.")\
+    \
+    number_to_guess = random.randint(1, 100)\
+    attempts = 0\
+    \
+    while True:\
+        try:\
+            guess = int(input("Please enter your guess: "))\
+            attempts += 1\
+            \
+            if guess < number_to_guess:\
+                print("Too low! Try again.")\
+            elif guess > number_to_guess:\
+                print("Too high! Try again.")\
+            else:\
+                print(f"Congratulations! You guessed the right number in \{attempts\} attempts.")\
+                break\
+        except ValueError:\
+            print("That's not a valid number. Please try again.")\
+    \
+    print("Thank you for playing the Number Guessing Game!")\
+\
+# Start the game\
+guess_number_game()\
+}
